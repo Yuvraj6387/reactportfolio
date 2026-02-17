@@ -51,6 +51,7 @@ const Skills = () => {
                         duration: 20,
                         ease: "linear",
                     }}
+                    style={{ willChange: "transform" }}
                 >
                     {marqueeSkills.map((skill, index) => (
                         <div

@@ -71,6 +71,7 @@ const Particles = () => {
                     style={{
                         width: Math.random() * 4 + 1 + "px",
                         height: Math.random() * 4 + 1 + "px",
+                        willChange: "transform, opacity"
                     }}
                 />
             ))}
