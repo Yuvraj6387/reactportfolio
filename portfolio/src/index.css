@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Modern Vibrant Theme */
+  --color-primary: #818cf8;
+  /* Indigo 400 */
+  --color-secondary: #f472b6;
+  /* Pink 400 */
+  --color-accent: #2dd4bf;
+  /* Teal 400 */
+
+  --color-dark: #0f172a;
+  /* Slate 900 */
+  --color-dark-card: #1e293b;
+  /* Slate 800 */
+  --color-dark-lighter: #334155;
+  /* Slate 700 */
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-spin-slow: spin 3s linear infinite;
+
+  --shadow-neon: 0 0 10px theme('colors.primary'), 0 0 20px theme('colors.primary');
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans selection:bg-primary selection:text-dark;
+    /* Restored and enhanced gradients for depth */
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(244, 114, 182, 0.15), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-dark/80 backdrop-blur-md border-b border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-dark-card/50 backdrop-blur-sm border border-white/5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+}
