@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, Github, Linkedin } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const formRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState({ type: '', message: '' });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: '', message: '' });
+
+        emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            formRef.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+            .then((result) => {
+                setLoading(false);
+                setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
+                formRef.current.reset();
+                setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+            }, (error) => {
+                setLoading(false);
+                console.error(error);
+                setStatus({ type: 'error', message: 'Something went wrong. Please try again later.' });
+            });
+    };
+
     return (
         <section className="w-full py-24 bg-dark relative overflow-hidden" id="contact">
             {/* Background Decorations */}
@@ -87,7 +115,11 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <form className="bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
+                        <form
+                            ref={formRef}
+                            onSubmit={handleSubmit}
+                            className="bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden"
+                        >
                             {/* Form Glow */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
 
@@ -99,6 +131,8 @@ const Contact = () => {
                                         <label className="text-sm font-medium text-gray-400 ml-1">Name</label>
                                         <input
                                             type="text"
+                                            name="from_name"
+                                            required
                                             className="w-full px-5 py-4 bg-dark-card/50 border border-white/10 rounded-xl focus:border-primary/50 focus:ring-1 focus:ring-primary/50 focus:outline-none text-white placeholder-gray-600 transition-all font-light"
                                             placeholder="John Doe"
                                         />
@@ -107,6 +141,8 @@ const Contact = () => {
                                         <label className="text-sm font-medium text-gray-400 ml-1">Email</label>
                                         <input
                                             type="email"
+                                            name="from_email"
+                                            required
                                             className="w-full px-5 py-4 bg-dark-card/50 border border-white/10 rounded-xl focus:border-primary/50 focus:ring-1 focus:ring-primary/50 focus:outline-none text-white placeholder-gray-600 transition-all font-light"
                                             placeholder="john@example.com"
                                         />
@@ -117,6 +153,8 @@ const Contact = () => {
                                     <label className="text-sm font-medium text-gray-400 ml-1">Subject</label>
                                     <input
                                         type="text"
+                                        name="subject"
+                                        required
                                         className="w-full px-5 py-4 bg-dark-card/50 border border-white/10 rounded-xl focus:border-primary/50 focus:ring-1 focus:ring-primary/50 focus:outline-none text-white placeholder-gray-600 transition-all font-light"
                                         placeholder="Project Discussion"
                                     />
@@ -126,15 +164,44 @@ const Contact = () => {
                                     <label className="text-sm font-medium text-gray-400 ml-1">Message</label>
                                     <textarea
                                         rows="5"
+                                        name="message"
+                                        required
                                         className="w-full px-5 py-4 bg-dark-card/50 border border-white/10 rounded-xl focus:border-primary/50 focus:ring-1 focus:ring-primary/50 focus:outline-none text-white placeholder-gray-600 transition-all resize-none font-light"
                                         placeholder="Tell me about your project..."
                                     ></textarea>
                                 </div>
 
-                                <button className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
-                                    Send Message
-                                    <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                                >
+                                    {loading ? (
+                                        <>
+                                            Sending...
+                                            <Loader2 size={18} className="animate-spin" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+                                        </>
+                                    )}
                                 </button>
+                                
+                                {status.message && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className={`p-4 rounded-xl text-center text-sm font-medium ${
+                                            status.type === 'success' 
+                                                ? 'bg-green-500/10 text-green-400 border border-green-500/20' 
+                                                : 'bg-red-500/10 text-red-400 border border-red-500/20'
+                                        }`}
+                                    >
+                                        {status.message}
+                                    </motion.div>
+                                )}
                             </div>
                         </form>
                     </motion.div>

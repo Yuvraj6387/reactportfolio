@@ -32,7 +32,7 @@ const Hero = () => {
                 separation: 20.00,
                 alignment: 20.00,
                 cohesion: 20.00,
-                quantity: 4.00
+                quantity: 3.00 // Reduced from 4.00 for performance
             }));
         }
         return () => {

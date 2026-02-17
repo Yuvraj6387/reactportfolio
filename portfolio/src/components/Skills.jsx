@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaReact, FaNodeJs, FaGitAlt, FaJava } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaGitAlt, FaJava, FaDocker, FaHtml5, FaCss3 } from 'react-icons/fa';
 import { SiJavascript, SiTailwindcss, SiMongodb, SiExpress } from 'react-icons/si';
 
 const skills = [
@@ -12,6 +12,9 @@ const skills = [
     { name: 'MongoDB', icon: <SiMongodb className="text-[#47A248]" /> },
     { name: 'Git', icon: <FaGitAlt className="text-[#F05032]" /> },
     { name: 'Java', icon: <FaJava className="text-[#007396]" /> },
+    { name: 'Docker', icon: <FaDocker className="text-[#007396]" /> },
+    { name: 'HTML', icon: <FaHtml5 className="text-[#ff0000]" /> },
+    { name: 'CSS', icon: <FaCss3 className="text-[#6a5acd]" /> },
 ];
 
 const Skills = () => {
