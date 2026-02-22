@@ -5,6 +5,7 @@ import { Download } from 'lucide-react';
 import BIRDS from 'vanta/dist/vanta.birds.min';
 import * as THREE from 'three';
 import profileImg from '../assets/yuvraj.png';
+import resume from "../assets/Yuvraj_Resume.pdf";
 
 const Hero = () => {
     const [vantaEffect, setVantaEffect] = useState(null);
@@ -58,7 +59,7 @@ const Hero = () => {
                     </div>
                 </motion.div>
 
-                <div className="text-green-500">Currently learning DSA and next.js</div>
+                <div className="text-green-500 ">Currently learning DSA and Next.js</div>
 
                 <motion.h1
                     initial={{ opacity: 0 }}
@@ -97,7 +98,7 @@ const Hero = () => {
                 >
                     <div className="mt-8">
                         <a
-                            href="/path/to/Yuvraj_Resume.pdf"
+                            href={resume}
                             download="Yuvraj_Resume.pdf"
                             className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300 pointer-events-auto cursor-pointer relative z-30 inline-flex items-center gap-2"
                         >
