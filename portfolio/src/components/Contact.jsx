@@ -77,7 +77,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="text-sm text-gray-500 font-medium uppercase tracking-wider mb-1">Call Me</p>
-                                    <span className="text-lg font-medium text-white">+91 7398858039</span>
+                                    <span className="text-lg font-medium text-white">+91-7398858039</span>
                                 </div>
                             </div>
 
@@ -114,11 +114,12 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         viewport={{ once: true }}
+                        className="relative z-20 pointer-events-auto"
                     >
                         <form
                             ref={formRef}
                             onSubmit={handleSubmit}
-                            className="bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden"
+                            className="bg-white/5 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl relative z-30 pointer-events-auto overflow-hidden"
                         >
                             {/* Form Glow */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
@@ -174,7 +175,8 @@ const Contact = () => {
                                 <button
                                     type="submit"
                                     disabled={loading}
-                                    className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                                    onTouchStart={() => {}}
+                                    className="w-full py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed pointer-events-auto z-40"
                                 >
                                     {loading ? (
                                         <>
