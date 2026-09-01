@@ -6,7 +6,7 @@ import NET from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
 import { useTheme } from '../context/ThemeContext';
 import profileImg from '../assets/yuvraj.png';
-import resume from "../assets/Yuvraj_Resume.pdf";
+import resume from "../assets/yuvraj_resume.pdf";
 
 const Hero = () => {
     const { theme } = useTheme();
