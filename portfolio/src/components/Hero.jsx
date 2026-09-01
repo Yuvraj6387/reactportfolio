@@ -1,45 +1,43 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ReactTyped } from 'react-typed';
 import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
-import BIRDS from 'vanta/dist/vanta.birds.min';
+import NET from 'vanta/dist/vanta.net.min';
 import * as THREE from 'three';
+import { useTheme } from '../context/ThemeContext';
 import profileImg from '../assets/yuvraj.png';
 import resume from "../assets/yuvraj_resume.pdf";
 
 const Hero = () => {
-    const [vantaEffect, setVantaEffect] = useState(null);
+    const { theme } = useTheme();
     const myRef = useRef(null);
+    const vantaRef = useRef(null);
 
     useEffect(() => {
-        if (!vantaEffect) {
-            setVantaEffect(BIRDS({
-                el: myRef.current,
-                THREE: THREE,
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                backgroundColor: 0x0f172a, // Slate 900
-                color1: 0x818cf8, // Indigo 400
-                color2: 0xec4899, // Pink 500
-                backgroundAlpha: 1.00,
-                birdSize: 1.50,
-                wingSpan: 30.00,
-                speedLimit: 5.00,
-                separation: 20.00,
-                alignment: 20.00,
-                cohesion: 20.00,
-                quantity: 3.00 // Reduced from 4.00 for performance
-            }));
-        }
+        const isDark = theme === 'dark';
+
+        vantaRef.current = NET({
+            el: myRef.current,
+            THREE: THREE,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundColor: isDark ? 0x0b1120 : 0xf4f6fb,
+            color: isDark ? 0x60a5fa : 0x4f46e5,
+            points: 11.00,
+            maxDistance: 22.00,
+            spacing: 17.00,
+            showDots: true,
+        });
+
         return () => {
-            if (vantaEffect) vantaEffect.destroy();
+            if (vantaRef.current) vantaRef.current.destroy();
         };
-    }, [vantaEffect]);
+    }, [theme]);
 
     return (
         <div ref={myRef} className="h-screen w-full flex flex-col justify-center items-center bg-dark relative overflow-hidden">

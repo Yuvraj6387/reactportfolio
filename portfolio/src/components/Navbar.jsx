@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
 
     const navLinks = [
         { name: 'Home', href: '#home' },
@@ -50,11 +52,25 @@ const Navbar = () => {
                                     </a>
                                 )
                             ))}
+                            <button
+                                onClick={toggleTheme}
+                                aria-label="Toggle light/dark theme"
+                                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all duration-300"
+                            >
+                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                            </button>
                         </div>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden">
+                    <div className="md:hidden flex items-center gap-2">
+                        <button
+                            onClick={toggleTheme}
+                            aria-label="Toggle light/dark theme"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-all duration-300"
+                        >
+                            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                        </button>
                         <button
                             onClick={toggleMenu}
                             className="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white p-2 rounded-md"

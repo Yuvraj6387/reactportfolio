@@ -64,13 +64,20 @@ const EducationCard = ({ edu, index }) => {
             className="mb-8 relative pl-8 md:pl-10"
         >
             {/* Dot on the timeline */}
-            <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.2, delay: 0.1 }}
-                className={`absolute left-[-5px] top-5 w-4 h-4 rounded-full bg-gradient-to-r ${edu.color} shadow-[0_0_12px_rgba(56,189,248,0.8)] z-20 border-2 border-dark`}
-            ></motion.div>
+            <span className="absolute left-[-5px] top-5 w-4 h-4 z-20">
+                <motion.span
+                    className={`absolute inset-0 rounded-full bg-gradient-to-r ${edu.color}`}
+                    animate={{ scale: [1, 2, 1], opacity: [0.6, 0, 0.6] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: index * 0.3 }}
+                />
+                <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.2, delay: 0.1 }}
+                    className={`relative w-4 h-4 rounded-full bg-gradient-to-r ${edu.color} shadow-[0_0_12px_rgba(56,189,248,0.8)] border-2 border-dark`}
+                />
+            </span>
 
             {/* Content Card */}
             <motion.div
@@ -144,12 +151,12 @@ const Education = () => {
                 {/* Timeline Container */}
                 <div className="relative pl-2 md:pl-4">
                     {/* The Static Vertical Line (Background Pipe) */}
-                    <div className="absolute left-[2px] top-0 bottom-0 w-[2px] bg-white/5 rounded-full"></div>
+                    <div className="absolute left-[1.5px] top-0 bottom-0 w-[3px] bg-white/5 rounded-full"></div>
 
                     {/* The Animated Vertical Line (Foreground Fill) with Moving Gradient */}
                     <motion.div
                         style={{ scaleY, originY: 0 }}
-                        className="absolute left-[2px] top-0 bottom-0 w-[2px] rounded-full z-10 overflow-hidden shadow-[0_0_15px_rgba(236,72,153,0.4)]"
+                        className="absolute left-[1.5px] top-0 bottom-0 w-[3px] rounded-full z-10 overflow-hidden shadow-[0_0_18px_rgba(236,72,153,0.5)]"
                     >
                         <motion.div
                             className="w-full h-[200%] bg-gradient-to-b from-purple-400 via-pink-500 to-red-500"
