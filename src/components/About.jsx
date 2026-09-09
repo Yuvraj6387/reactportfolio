@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
-import profileImg from '../assets/yuvi.jpg';
-import resumePdf from '../assets/yuvraj_resume.pdf';
+import profileImg from '../assets/yuvi.webp';
 
 const About = () => {
     return (

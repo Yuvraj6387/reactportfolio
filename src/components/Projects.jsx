@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Github, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
-import wanderlustImg from '../assets/wanderlust (2).png';
-import githubImg from '../assets/github-clone.png';
-import zoomcloneImg from '../assets/zoom-clone.png';
-import netflixImg from '../assets/netflix.png';
-import aiInterviewImg from '../assets/ai-interview-prep.png';
+import wanderlustImg from '../assets/wanderlust.webp';
+import githubImg from '../assets/github-clone.webp';
+import zoomcloneImg from '../assets/zoom-clone.webp';
+import netflixImg from '../assets/netflix.webp';
+import aiInterviewImg from '../assets/ai-interview-prep.webp';
 
 const projects = [
     {

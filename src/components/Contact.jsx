@@ -19,7 +19,7 @@ const Contact = () => {
             formRef.current,
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
-            .then((result) => {
+            .then(() => {
                 setLoading(false);
                 setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
                 formRef.current.reset();

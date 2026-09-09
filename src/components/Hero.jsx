@@ -3,7 +3,7 @@ import { ReactTyped } from 'react-typed';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 import MernBackground from './MernBackground';
-import profileImg from '../assets/yuvraj.png';
+import profileImg from '../assets/yuvraj.webp';
 import resume from "../assets/yuvraj_resume.pdf";
 
 const Hero = () => {

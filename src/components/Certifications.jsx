@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
+import Particles from './Particles';
 
 const certifications = [
     {
@@ -44,40 +45,6 @@ const certifications = [
         color: 'from-emerald-400 to-teal-500'
     }
 ];
-
-const Particles = () => {
-    return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(15)].map((_, i) => (
-                <motion.div
-                    key={i}
-                    className="absolute bg-primary rounded-full opacity-10"
-                    initial={{
-                        x: Math.random() * 100 + "%",
-                        y: "110%",
-                        scale: 0
-                    }}
-                    animate={{
-                        y: "-10%",
-                        scale: [0, 1, 0],
-                        opacity: [0, 0.2, 0]
-                    }}
-                    transition={{
-                        duration: Math.random() * 15 + 10,
-                        repeat: Infinity,
-                        delay: Math.random() * 5,
-                        ease: "linear"
-                    }}
-                    style={{
-                        width: Math.random() * 4 + 1 + "px",
-                        height: Math.random() * 4 + 1 + "px",
-                        willChange: "transform, opacity"
-                    }}
-                />
-            ))}
-        </div>
-    );
-};
 
 const CertificationCard = ({ cert, index }) => {
     return (
