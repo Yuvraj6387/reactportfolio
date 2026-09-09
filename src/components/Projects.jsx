@@ -5,13 +5,14 @@ import wanderlustImg from '../assets/wanderlust (2).png';
 import githubImg from '../assets/github-clone.png';
 import zoomcloneImg from '../assets/zoom-clone.png';
 import netflixImg from '../assets/netflix.png';
+import aiInterviewImg from '../assets/ai-interview-prep.png';
 
 const projects = [
     {
         title: 'AI Interview Prep Platform',
         description: 'An AI-powered platform that generates role-specific interview questions, evaluates answers in real time and visualises performance with analytics dashboards.',
         tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini API', 'Groq API', 'Recharts'],
-        image: null,
+        image: aiInterviewImg,
         live: 'https://ai-interview-prep-vng7.vercel.app/',
         github: null
     },
