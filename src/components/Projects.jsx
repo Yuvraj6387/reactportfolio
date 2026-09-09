@@ -124,7 +124,7 @@ const Projects = () => {
                             initial={{ width: 0 }}
                             whileInView={{ width: "100%" }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500"
+                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                         />
                     </h2>
                     <p className="text-gray-400 mt-4 text-sm">Swipe, click, or use the arrows to explore what I've built</p>

@@ -33,7 +33,7 @@ const Hero = () => {
                     transition={{ delay: 0.2, duration: 0.8 }}
                     className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm px-4 py-1.5 text-xs font-mono tracking-wide text-accent"
                 >
-                    <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
                     MERN Stack Developer · Currently learning DSA & Next.js
                 </motion.div>
 
@@ -43,7 +43,7 @@ const Hero = () => {
                     transition={{ delay: 0.3, duration: 0.8 }}
                     className="mt-5 text-4xl sm:text-6xl font-bold text-white mb-4 drop-shadow-lg"
                 >
-                    <span className="text-green-500">I'm</span> <span className="text-white">Yuvraj Singh</span>
+                    <span className="text-secondary">I'm</span> <span className="text-white">Yuvraj Singh</span>
                 </motion.h1>
 
                 <motion.div

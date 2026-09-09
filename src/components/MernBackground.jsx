@@ -9,11 +9,11 @@ import React, { useId } from 'react';
  * Rendered behind hero / stack content — pointer-events-none, low opacity.
  */
 const NODES = [
-    { id: 'client', cx: 70, cy: 80, r: 13, color: '#38bdf8' },   // browser / user
-    { id: 'react', cx: 150, cy: 300, r: 15, color: '#61DAFB' },  // react frontend
-    { id: 'express', cx: 690, cy: 110, r: 14, color: '#a5b4fc' },// express api
-    { id: 'node', cx: 740, cy: 340, r: 15, color: '#8CC84B' },   // node server
-    { id: 'mongo', cx: 630, cy: 510, r: 16, color: '#4DB33D' },  // mongodb
+    { id: 'client', cx: 70, cy: 80, r: 13, color: '#38bdf8' },   // sky
+    { id: 'react', cx: 150, cy: 300, r: 15, color: '#818cf8' },  // indigo
+    { id: 'express', cx: 690, cy: 110, r: 14, color: '#6366f1' },// indigo
+    { id: 'node', cx: 740, cy: 340, r: 15, color: '#10b981' },   // emerald
+    { id: 'mongo', cx: 630, cy: 510, r: 16, color: '#34d399' },  // emerald
 ];
 
 const LINKS = [
@@ -119,7 +119,7 @@ const MernBackground = ({ className = '' }) => {
             </svg>
 
             {/* colour wash */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,0.08),transparent_40%),radial-gradient(circle_at_85%_80%,rgba(77,179,61,0.07),transparent_40%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(56,189,248,0.08),transparent_40%),radial-gradient(circle_at_85%_80%,rgba(16,185,129,0.07),transparent_40%)]" />
         </div>
     );
 };

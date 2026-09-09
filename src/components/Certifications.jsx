@@ -10,7 +10,7 @@ const certifications = [
         date: '2025',
         description: 'Comprehensive bootcamp covering React, Node.js, Express, and MongoDB.',
         link: 'https://mycourse.app/HjL4zVyv2zBJcuHiC',
-        color: 'from-cyan-400 to-blue-500'
+        color: 'from-primary to-secondary'
     },
     {
         title: 'Data Structures & Algorithms',
@@ -18,7 +18,7 @@ const certifications = [
         date: '2025',
         description: 'Mastered core DSA concepts in Java/C++, optimized for competitive programming.',
         link: '#',
-        color: 'from-purple-400 to-pink-500'
+        color: 'from-primary to-secondary'
     },
     {
         title: 'Data Analytics Job Simulation',
@@ -26,7 +26,7 @@ const certifications = [
         date: '2025',
         description: 'Deep dive into hooks, context, performance optimization, and patterns.',
         link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_uvbRBaS768pjx2fqZ_1754380312714_completion_certificate.pdf',
-        color: 'from-blue-400 to-indigo-500'
+        color: 'from-primary to-secondary'
     },
     {
         title: 'Basic SQL and CSS',
@@ -34,7 +34,7 @@ const certifications = [
         date: '2024',
         description: 'Building scalable APIs and automation scripts using Python.',
         link: 'https://www.hackerrank.com/certificates/iframe/0e9e9377a5c7',
-        color: 'from-emerald-400 to-teal-500'
+        color: 'from-primary to-secondary'
     },
     {
         title: 'MongoDB CRUD Operations in Node.js',
@@ -42,7 +42,7 @@ const certifications = [
         date: '2025',
         description: 'Learn how to perform CRUD operations in Node.js using MongoDB.',
         link: 'https://learn.mongodb.com/c/q2eO-x_HR76UD3Z4LEnI7Q',
-        color: 'from-emerald-400 to-teal-500'
+        color: 'from-primary to-secondary'
     }
 ];
 
@@ -135,7 +135,7 @@ const Certifications = () => {
                             initial={{ width: 0 }}
                             whileInView={{ width: "100%" }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500"
+                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                         />
                     </h2>
                 </motion.div>
@@ -151,7 +151,7 @@ const Certifications = () => {
                         className="absolute left-[1.5px] top-0 bottom-0 w-[3px] rounded-full z-10 overflow-hidden shadow-[0_0_18px_rgba(56,189,248,0.5)]"
                     >
                         <motion.div
-                            className="w-full h-[200%] bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-600"
+                            className="w-full h-[200%] bg-gradient-to-b from-primary via-secondary to-primary"
                             animate={{ y: ["-50%", "0%"] }}
                             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                         />

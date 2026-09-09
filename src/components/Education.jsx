@@ -10,7 +10,7 @@ const education = [
         year: '2022 - 2026',
         grade: 'CGPA: 8.5',
         description: 'Specialized in Computer Science and Engineering.',
-        color: 'from-cyan-400 to-blue-500'
+        color: 'from-primary to-secondary'
     },
     {
         degree: 'Board of Technical Education, Lucknow',
@@ -18,7 +18,7 @@ const education = [
         year: '2020 - 2023',
         grade: 'Percentage: 75%',
         description: 'Diploma in Electrical Engineering.',
-        color: 'from-purple-400 to-pink-500'
+        color: 'from-primary to-secondary'
     }
 ];
 
@@ -111,7 +111,7 @@ const Education = () => {
                             initial={{ width: 0 }}
                             whileInView={{ width: "100%" }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-purple-400 to-pink-500"
+                            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
                         />
                     </h2>
                 </motion.div>
@@ -124,10 +124,10 @@ const Education = () => {
                     {/* The Animated Vertical Line (Foreground Fill) with Moving Gradient */}
                     <motion.div
                         style={{ scaleY, originY: 0 }}
-                        className="absolute left-[1.5px] top-0 bottom-0 w-[3px] rounded-full z-10 overflow-hidden shadow-[0_0_18px_rgba(236,72,153,0.5)]"
+                        className="absolute left-[1.5px] top-0 bottom-0 w-[3px] rounded-full z-10 overflow-hidden shadow-[0_0_18px_rgba(99,102,241,0.5)]"
                     >
                         <motion.div
-                            className="w-full h-[200%] bg-gradient-to-b from-purple-400 via-pink-500 to-red-500"
+                            className="w-full h-[200%] bg-gradient-to-b from-primary via-secondary to-primary"
                             animate={{ y: ["-50%", "0%"] }}
                             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                         />

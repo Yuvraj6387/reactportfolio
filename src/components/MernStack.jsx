@@ -11,8 +11,8 @@ const flow = [
     { label: 'Express API', sub: 'Routes the request, runs middleware', icon: <SiExpress />, color: '#a5b4fc', phase: 'request' },
     { label: 'Node.js Server', sub: 'Executes the business logic', icon: <FaNodeJs />, color: '#8CC84B', phase: 'request' },
     { label: 'MongoDB Database', sub: 'Reads / writes the documents', icon: <SiMongodb />, color: '#4DB33D', phase: 'request' },
-    { label: 'Response', sub: 'Data travels back up the stack', icon: <RefreshCw />, color: '#2dd4bf', phase: 'response' },
-    { label: 'React UI', sub: 'State updates, the view re-renders', icon: <FaReact />, color: '#2dd4bf', phase: 'response' },
+    { label: 'Response', sub: 'Data travels back up the stack', icon: <RefreshCw />, color: '#10b981', phase: 'response' },
+    { label: 'React UI', sub: 'State updates, the view re-renders', icon: <FaReact />, color: '#10b981', phase: 'response' },
 ];
 
 const cards = [
@@ -49,7 +49,7 @@ const SectionHeading = ({ children }) => (
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-cyan-400 to-blue-500"
+            className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-primary to-secondary"
         />
     </h2>
 );
