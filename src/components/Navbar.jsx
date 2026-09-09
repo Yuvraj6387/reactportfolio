@@ -9,6 +9,8 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Home', href: '#home' },
+        { name: 'Stack', href: '#stack' },
+        { name: 'Process', href: '#process' },
         { name: 'About', href: '#about' },
         { name: 'Skills', href: '#skills' },
         { name: 'Projects', href: '#projects' },
@@ -30,8 +32,8 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:block">
-                        <div className="ml-10 flex items-center space-x-8">
+                    <div className="hidden lg:block">
+                        <div className="ml-10 flex items-center space-x-5">
                             {navLinks.map((link) => (
                                 link.name === 'Contact' ? (
                                     <a
@@ -45,7 +47,7 @@ const Navbar = () => {
                                     <a
                                         key={link.name}
                                         href={link.href}
-                                        className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-300 relative group"
+                                        className="text-gray-300 hover:text-white px-2 py-2 text-sm font-medium transition-colors duration-300 relative group"
                                     >
                                         {link.name}
                                         <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -63,7 +65,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center gap-2">
+                    <div className="lg:hidden flex items-center gap-2">
                         <button
                             onClick={toggleTheme}
                             aria-label="Toggle light/dark theme"

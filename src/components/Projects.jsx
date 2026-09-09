@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, Github, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import wanderlustImg from '../assets/wanderlust (2).png';
 import githubImg from '../assets/github-clone.png';
 import zoomcloneImg from '../assets/zoom-clone.png';
 import netflixImg from '../assets/netflix.png';
 
 const projects = [
+    {
+        title: 'AI Interview Prep Platform',
+        description: 'An AI-powered platform that generates role-specific interview questions, evaluates answers in real time and visualises performance with analytics dashboards.',
+        tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Google Gemini API', 'Groq API', 'Recharts'],
+        image: null,
+        live: 'https://ai-interview-prep-vng7.vercel.app/',
+        github: null
+    },
     {
         title: 'Wanderlust',
         description: 'A travel-based social media platform where users can share their travel experiences and photos.',
@@ -40,6 +48,36 @@ const projects = [
         github: 'https://github.com/Yuvraj6387/netflix-clone'
     }
 ];
+
+// Generated cover for projects that don't ship a screenshot
+const ProjectPoster = ({ project }) => (
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[radial-gradient(circle_at_30%_20%,#312e81,transparent_55%),radial-gradient(circle_at_75%_85%,#155e75,transparent_55%)] bg-dark-card">
+        <div
+            className="absolute inset-0 opacity-[0.18]"
+            style={{
+                backgroundImage:
+                    'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
+                backgroundSize: '38px 38px',
+            }}
+        />
+        <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white backdrop-blur-sm shadow-[0_0_40px_-8px_rgba(129,140,248,0.8)]">
+            <Sparkles size={30} />
+        </div>
+        <h4 className="relative z-10 mt-4 px-6 text-center text-xl font-bold tracking-tight text-white">
+            {project.title}
+        </h4>
+        <div className="relative z-10 mt-3 flex flex-wrap justify-center gap-2 px-8">
+            {project.tech.slice(0, 4).map((t) => (
+                <span
+                    key={t}
+                    className="rounded-full border border-white/10 bg-black/30 px-2.5 py-1 text-[10px] font-mono tracking-wide text-gray-300"
+                >
+                    {t}
+                </span>
+            ))}
+        </div>
+    </div>
+);
 
 const variants = {
     enter: (direction) => ({ x: direction > 0 ? 80 : -80, opacity: 0 }),
@@ -122,12 +160,16 @@ const Projects = () => {
                                     className="relative w-full block group/img cursor-pointer"
                                 >
                                     <div className="relative aspect-[16/10] overflow-hidden bg-black/20">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            draggable={false}
-                                            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.04]"
-                                        />
+                                        {project.image ? (
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                draggable={false}
+                                                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover/img:scale-[1.04]"
+                                            />
+                                        ) : (
+                                            <ProjectPoster project={project} />
+                                        )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-dark-card via-dark-card/10 to-transparent" />
                                         <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 text-white text-sm font-semibold tracking-wide">
                                             NEXT PROJECT <ChevronRight size={18} />
@@ -156,14 +198,16 @@ const Projects = () => {
                                             View Live
                                             <ArrowUpRight size={16} className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                                         </a>
-                                        <a
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 text-gray-400 font-medium text-sm hover:text-white transition-colors"
-                                        >
-                                            <Github size={16} /> Source
-                                        </a>
+                                        {project.github && (
+                                            <a
+                                                href={project.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1.5 text-gray-400 font-medium text-sm hover:text-white transition-colors"
+                                            >
+                                                <Github size={16} /> Source
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </motion.div>

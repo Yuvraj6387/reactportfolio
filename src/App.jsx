@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import MernStack from './components/MernStack';
+import MernProcess from './components/MernProcess';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -71,6 +73,8 @@ function App() {
         <div id="home">
           <Hero />
         </div>
+        <MernStack />
+        <MernProcess />
         <div id="about">
           <About />
         </div>
