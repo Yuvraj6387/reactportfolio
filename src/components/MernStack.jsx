@@ -58,7 +58,7 @@ const MernStack = () => {
     const [active, setActive] = useState(null);
 
     return (
-        <section id="stack" className="relative w-full py-24 bg-dark text-white overflow-hidden">
+        <section id="stack" className="relative w-full py-20 bg-dark text-white overflow-hidden">
             <MernBackground className="opacity-[0.18]" />
 
             <div className="relative z-10 max-w-6xl mx-auto px-4">
@@ -67,26 +67,26 @@ const MernStack = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center max-w-3xl mx-auto"
+                    className="text-center max-w-4xl mx-auto"
                 >
                     <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-mono tracking-widest text-accent uppercase">
                         The Stack
                     </span>
-                    <h2 className="mt-5 text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
+                    <h2 className="mt-5 text-2xl sm:text-4xl font-bold tracking-tight leading-tight">
                         Build Your Next Web Application with{' '}
                         <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                             MERN Stack
                         </span>
                     </h2>
-                    <p className="mt-4 text-gray-400 text-base sm:text-lg">
+                    <p className="mt-4 text-gray-400 text-sm sm:text-base">
                         Full Stack Development using MongoDB, Express.js, React.js and Node.js.
                     </p>
                     <a
                         href="#contact"
-                        className="mt-8 inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300"
+                        className="mt-7 inline-flex items-center gap-2 px-6 py-2.5 text-sm bg-gradient-to-r from-primary to-secondary text-white rounded-full font-semibold shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:scale-105 transition-all duration-300"
                     >
                         Start Your Project
-                        <ArrowRight size={18} />
+                        <ArrowRight size={16} />
                     </a>
                 </motion.div>
 
