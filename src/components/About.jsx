@@ -23,22 +23,37 @@ const About = () => {
 
                         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                             <p>
-                                I am a passionate Full Stack Developer with a strong foundation in modern web technologies.
-                                I love building scalable, responsive, and user-friendly applications that solve real-world problems.
+                                I'm a full stack developer who builds and ships MERN applications end to end: React interfaces,
+                                Express REST APIs, MongoDB and MySQL data models, JWT and Passport authentication, and deployment
+                                on AWS, Render, Vercel and Netlify.
                             </p>
                             <p>
-                                Currently, I am also diving deep into Data Structures and Algorithms to enhance my problem-solving skills.
-                                My journey involves constant learning and applying new technologies to create impactful digital experiences.
+                                During my internship at Prodesk I worked on a production web app, and on my own I built an
+                                AI interview platform on the Gemini and Groq APIs, cutting its response time from over 60 seconds to under 2.
                             </p>
 
-                            <div className="pt-4">
+                            <dl className="grid grid-cols-2 gap-3 text-sm">
+                                {[
+                                    ['Based in', 'Mohali, Punjab'],
+                                    ['Education', 'B.Tech CSE · 2026'],
+                                    ['Focus', 'MERN · AI integrations'],
+                                    ['Status', 'Open to full-time roles'],
+                                ].map(([k, v]) => (
+                                    <div key={k} className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                                        <dt className="text-[11px] uppercase tracking-widest text-gray-500">{k}</dt>
+                                        <dd className="mt-0.5 font-medium text-white">{v}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+
+                            <div className="pt-2">
                                 <a
                                     href="https://www.linkedin.com/in/yuvraj-singh022/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all inline-flex items-center gap-2"
+                                    className="px-6 py-2.5 text-sm bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full shadow-lg hover:shadow-primary/25 hover:-translate-y-1 transition-all inline-flex items-center gap-2"
                                 >
-                                    <Linkedin size={20} />
+                                    <Linkedin size={16} />
                                     Connect on LinkedIn
                                 </a>
                             </div>

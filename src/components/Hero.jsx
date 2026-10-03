@@ -97,6 +97,26 @@ const Hero = () => {
                         Download Resume
                     </a>
                 </motion.div>
+
+                <motion.dl
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1, duration: 0.8 }}
+                    className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 backdrop-blur-sm"
+                >
+                    {[
+                        ['5+', 'Projects shipped'],
+                        ['10+', 'React components in prod'],
+                        ['30%', 'Faster page loads'],
+                        ['60s→2s', 'AI response time'],
+                    ].map(([value, label]) => (
+                        <div key={label} className="bg-dark/80 px-3 py-4">
+                            <dt className="sr-only">{label}</dt>
+                            <dd className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{value}</dd>
+                            <dd className="mt-1 text-[11px] sm:text-xs text-gray-400">{label}</dd>
+                        </div>
+                    ))}
+                </motion.dl>
             </div>
         </div>
     );

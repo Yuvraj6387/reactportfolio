@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import MernStack from './components/MernStack';
 import MernProcess from './components/MernProcess';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -65,11 +66,6 @@ function App() {
     <Router>
       <div className="min-h-screen bg-dark text-white">
         <Navbar />
-        {/* Sections can be on one page with scroll links, or separate pages. 
-            The user asked for sections but also mentioned React Router. 
-            I'll implement a single page scroll layout but wrap it in Router context if needed or for potential future pages. 
-            Actually, for a portfolio, single page usually works best with scroll. 
-            I'll stick to a single page layout where Navbar links scroll to sections. */}
         <div id="home">
           <Hero />
         </div>
@@ -78,6 +74,7 @@ function App() {
         <div id="about">
           <About />
         </div>
+        <Experience />
         <div id="skills">
           <Skills />
         </div>
